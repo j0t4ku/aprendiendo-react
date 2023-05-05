@@ -12,7 +12,9 @@
   "devDependencies": {
     "standard": "^17.0.0"
   },
-  "esLintConfig": {
-    "extends": "./node_modules/standard/eslintrc.json"
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
   }
 }
