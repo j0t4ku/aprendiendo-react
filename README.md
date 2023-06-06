@@ -1,8 +1,8 @@
 <div align="center">
-# Aprendiendo React ⚛️ con [@midudev](https://twitch.tv/midudev)
+# Aprendiendo React ⚛️ con [midudev](https://twitch.tv/midudev)
 
 
-Aprendiendo **React** con proyectos.
+Aprendiendo **React** con proyectos sencillos.
 
 
 ##  Proyectos de React
