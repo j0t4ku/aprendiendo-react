@@ -1,32 +1,40 @@
+import { Suspense, lazy } from 'react'
 import './App.css'
-import HomePage from './pages/Home'
-import AboutPage from './pages/About'
 import { Router } from './Router'
 import Page404 from './pages/404'
 import SearchPage from './pages/Search'
 import { Route } from './Route'
-const appRoutes= [
-  
+
+const LazyHomePage = lazy(() => import('./pages/Home.jsx'))
+const LazyAboutPage = lazy(() => import('./pages/About.jsx')) // Import Dinamico
+
+const appRoutes = [
   {
-    path:'/search/:query',
+    path: '/:lang/about',
+    Component: LazyAboutPage
+  },
+  {
+    path: '/search/:query',
     Component: SearchPage
   }
 ]
 
 
 function App() {
-    
+
   return (
-      <main>
-        <Router 
-        routes={appRoutes}
-        defaultComponent={Page404}>
-          <Route path='/' Component={HomePage} />
-          <Route path='/about' Component={AboutPage} />
+    <main>
+      <Suspense fallback={null}>
+        <Router
+          routes={appRoutes}
+          defaultComponent={Page404}>
+          <Route path='/' Component={LazyHomePage} />
+          <Route path='/about' Component={LazyAboutPage} />
 
         </Router>
-      </main>
-    )  
+      </Suspense>
+    </main>
+  )
 }
 
 export default App

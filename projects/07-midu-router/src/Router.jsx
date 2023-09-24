@@ -2,9 +2,10 @@ import { EVENTS } from "./const/const"
 import { useState, useEffect } from "react"
 import {match} from 'path-to-regexp'
 import { Children } from "react"
+import { getCurrentPath } from "./utils"
 
 export function Router({children, routes=[], defaultComponent: DefaultComponent=()=><h1>404</h1>}){
-    const [currentPath, setCurrentPath]= useState(window.location.pathname)
+    const [currentPath, setCurrentPath]= useState(getCurrentPath())
     
     useEffect(()=>{
       const onLocationChange=()=>{
@@ -30,7 +31,7 @@ export function Router({children, routes=[], defaultComponent: DefaultComponent=
       return props
     })
 
-    const routeToUse= routes.concat(routesFromChildren)
+    const routeToUse= routes.concat(routesFromChildren).filter(Boolean)
 
 
     const Page= routeToUse.find(

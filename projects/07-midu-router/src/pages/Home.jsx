@@ -4,7 +4,7 @@ export default function HomePage(){
       <>
         <h1>Home</h1>
         <p>Esta es una pagina de ejemplo para crear un React Router desde cero</p>
-        <button onClick={()=>navigate('/about')}>Ir a Sobre nosotros</button>
+        <button onClick={()=>navigate('/about')}>Go to About</button>
   
       </>
     )

@@ -10,9 +10,9 @@
 - [X] Crear componente Router para hacerlo más declarativo
 - [X] Soportar ruta por defecto (404)
 - [X] Soportar rutas con parámetros
-- [] Componente <Route /> para hacerlo declarativo
-- [] Lazy Loading de las rutas
-- [] Hacer un i18n con las rutas
+- [X] Componente <Route /> para hacerlo declarativo
+- [X] Lazy Loading de las rutas
+- [X] Hacer un i18n con las rutas
 - [] Testing
 - [] Publicar el paquete en NPM
 
